@@ -23,7 +23,8 @@ public class PostGateway {
             PostResponse result = restTemplate.getForObject(url, PostResponse.class);
             return Optional.of(result);
         } catch (Exception e) {
-            throw new RuntimeException("PostGateway error!!");
+            return Optional.empty();
+//            throw new RuntimeException("PostGateway error!!");
         }
 
     }
